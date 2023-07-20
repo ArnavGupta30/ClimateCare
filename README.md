@@ -2,7 +2,9 @@
 ## A project to education people about climate change
 
 <p align="center">
-![Lines of code](https://img.shields.io/tokei/lines/github/ArnavGupta30/ClimateCare?style=for-the-badge) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/ArnavGupta30/ClimateCare?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/ArnavGupta30/ClimateCare?style=for-the-badge)
+  
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/ArnavGupta30/ClimateCare?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/ArnavGupta30/ClimateCare?style=for-the-badge)
+
 </p>
 
 > Climate Change won’t wait, It’s time to innovate.
