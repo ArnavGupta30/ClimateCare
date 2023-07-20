@@ -1,0 +1,73 @@
+<%- include("../partials/header.ejs") -%>
+
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-image: url('');">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2>SolarSight</h2>
+            <p>Find out how much estimated energy can be produced by a solar panel of 100ft² in your area.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li>SolarSight</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
+
+  <section class="sample-page">
+    <div class="container" data-aos="fade-up">
+
+      <div class="icon-boxes position-relative">
+        <div class="container position-relative">
+          <div class="row">
+
+            <form id="carbonForm">
+
+              <div class="form-group">
+                <label for="renewableEnergyGenerated">Where do you live?</label>
+                <input type="text" class="form-control" id="location" required>
+              </div>
+
+              <br>
+
+              <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+
+            <h2><br>Total energy produced by 1 solar panel of 100ft² : <span id="totalEmissions" class="text-bg-dark text-white">&nbsp;0&nbsp;</span> watts</h2>
+
+            <script>
+              document.getElementById('carbonForm').addEventListener('submit', async function(event) {
+                event.preventDefault();
+
+                fetch(`https://api.allorigins.win/get?url=${encodeURI(`https://solar-sight.onrender.com/api/?place=` + document.getElementById('location').value)}`)
+                  .then((response) => {
+                    return response.json(); // or .text() or .blob() ...
+                  })
+                  .then((text) => {
+                    var data = JSON.parse(text.contents);
+                    document.getElementById('totalEmissions').innerHTML = `&nbsp;${Math.floor(parseFloat(data.estimatedElectricity))}&nbsp;`;
+                  })
+
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<%- include("../partials/footer.ejs") -%>

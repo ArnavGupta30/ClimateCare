@@ -1,0 +1,133 @@
+<%- include("../partials/header.ejs") -%>
+
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-image: url('');">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2>CarbonCalc</h2>
+            <p>Calculate your estimated carbon footprint by filling out this small survey. Currently the parameteres of this survey are limited and are only applicable for India but we aim to make this a global survey by utilizing google's paid location search API</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="/">Home</a></li> 
+          <li><a href="/projects">Projects</a></li>
+          <li>CarbonCalc</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
+
+  <section class="sample-page">
+    <div class="container" data-aos="fade-up">
+
+      <div class="icon-boxes position-relative">
+        <div class="container position-relative">
+          <div class="row">
+
+            <form id="carbonForm">
+              <div class="form-group">
+                <label for="electricityConsumption">Electricity Consumption (kWh):</label>
+                <input type="number" class="form-control" id="electricityConsumption" required>
+              </div>
+
+              <br>
+        
+              <div class="form-group">
+                <label for="fuelConsumption">Petrol Fuel Consumption (liters):</label>
+                <input type="number" class="form-control" id="fuelConsumption" required>
+              </div>
+
+              <br>
+        
+              <div class="form-group">
+                <label for="vehicleDistance">Vehicle Travel Distance (km) (petrol):</label>
+                <input type="number" class="form-control" id="vehicleDistance" required>
+              </div>
+
+              <br>
+        
+              <div class="form-group">
+                <label for="flightDistance">Flight Distance (km):</label>
+                <input type="number" class="form-control" id="flightDistance" required>
+              </div>
+
+              <br>
+        
+              <div class="form-group">
+                <label for="naturalGasConsumption">Natural Gas Consumption (cubic meters):</label>
+                <input type="number" class="form-control" id="naturalGasConsumption" required>
+              </div>
+
+              <br>
+        
+              <div class="form-group">
+                <label for="otherEnergyConsumption">Other Energy Consumption:</label>
+                <input type="number" class="form-control" id="otherEnergyConsumption" required>
+              </div>
+
+              <br>
+        
+              <div class="form-group">
+                <label for="renewableEnergyGenerated">Renewable Energy Generated (kWh):</label>
+                <input type="number" class="form-control" id="renewableEnergyGenerated" required>
+              </div>
+
+              <br>
+        
+              <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+
+            <h2><br>Total Carbon Emissions: <span id="totalEmissions" class="text-bg-dark text-white">&nbsp;0&nbsp;</span> metric tons</h2>
+
+            <script>
+              document.getElementById('carbonForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+          
+                const electricityConsumption = parseFloat(document.getElementById('electricityConsumption').value);
+                const fuelConsumption = parseFloat(document.getElementById('fuelConsumption').value);
+                const vehicleDistance = parseFloat(document.getElementById('vehicleDistance').value);
+                const flightDistance = parseFloat(document.getElementById('flightDistance').value);
+                const naturalGasConsumption = parseFloat(document.getElementById('naturalGasConsumption').value);
+                const otherEnergyConsumption = parseFloat(document.getElementById('otherEnergyConsumption').value);
+                const renewableEnergyGenerated = parseFloat(document.getElementById('renewableEnergyGenerated').value);
+          
+                // Replace these values with the actual emission factors for India
+                const emissionFactorElectricity = 0.93; // in kg CO2 per kWh
+                const emissionFactorFuel = 2.296; // in kg CO2 per liter
+                const emissionFactorVehicle = 2.27; // in kg CO2 per km
+                const emissionFactorFlight = 0.81; // in kg CO2 per km
+                const emissionFactorNaturalGas = 1.93; // in kg CO2 per cubic meter
+                const emissionFactorOtherEnergy = 0.5; // in kg CO2 per unit of energy (replace with actual factor)
+                const emissionFactorRenewable = 0.0; // in kg CO2 per kWh (assuming renewable energy has no emissions)
+          
+                const totalEmissions = (
+                  (electricityConsumption * emissionFactorElectricity) +
+                  (fuelConsumption * emissionFactorFuel) +
+                  (vehicleDistance * emissionFactorVehicle) +
+                  (flightDistance * emissionFactorFlight) +
+                  (naturalGasConsumption * emissionFactorNaturalGas) +
+                  (otherEnergyConsumption * emissionFactorOtherEnergy) -
+                  (renewableEnergyGenerated * emissionFactorRenewable)
+                ).toFixed(2);
+          
+                document.getElementById('totalEmissions').innerHTML = `&nbsp;${Math.floor(totalEmissions)}&nbsp;`;
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<%- include("../partials/footer.ejs") -%>
