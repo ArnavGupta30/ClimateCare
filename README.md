@@ -1,9 +1,5 @@
 # Climate Care
-<<<<<<< HEAD
 ## A project to educate people about climate change
-=======
-## A project to education people about climate change
->>>>>>> 3c26ea7131f15a4ab18c9716ec8063c3e87e06bd
 > Climate Change won’t wait, It’s time to innovate.
 
 We aim to educate all age groups about climate change through engaging activities and fun ways to obtain information
