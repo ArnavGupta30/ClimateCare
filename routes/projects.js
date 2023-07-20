@@ -59,6 +59,7 @@ module.exports = (app, db) => {
     if (!game.scenarios[scenario.id]){
       res.cookie("finish", true);
       res.redirect("/project/game");
+      return;
     }
 
     res.cookie("pollution", parseInt(pollution) + scenario.options[parseInt(option)].pollution_change);
