@@ -1,5 +1,5 @@
 # Climate Care
-## A project to education people about climate change
+## A project to educate people about climate change
 > Climate Change won’t wait, It’s time to innovate.
 
 We aim to educate all age groups about climate change through engaging activities and fun ways to obtain information
