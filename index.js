@@ -33,6 +33,10 @@ fs.readdirSync('./routes').forEach((file) => {
   require(`./routes/${file}`)(app);
 })
 
+app.use("*", (req, res) => {
+  res.status(404).render('404');
+})
+
 // listen
 
 app.listen(3000, () => {
