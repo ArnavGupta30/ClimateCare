@@ -1,12 +1,5 @@
 # Climate Care
 ## A project to education people about climate change
-
-<p align="center">
-  
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/ArnavGupta30/ClimateCare?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/ArnavGupta30/ClimateCare?style=for-the-badge)
-
-</p>
-
 > Climate Change won’t wait, It’s time to innovate.
 
 We aim to educate all age groups about climate change through engaging activities and fun ways to obtain information
