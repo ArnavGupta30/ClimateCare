@@ -306,7 +306,7 @@ section {
 }
 
 .header.sticked {
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
@@ -333,7 +333,7 @@ section {
 }
 
 .sticked-header-offset {
-  margin-top: 70px;
+  margin-top: 0px;
 }
 
 section {
