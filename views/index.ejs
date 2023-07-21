@@ -1,5 +1,7 @@
 <%- include('partials/header') %>
 
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero">
   <div class="container position-relative">
@@ -13,7 +15,9 @@
         </div>
       </div>
       <div class="col-lg-6 order-1 order-lg-2">
-        <img src="/static/img/logo.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+        <model-viewer src="/static/model.gltf" alt="" class="threemodel" camera-controls auto-rotate ar>
+        </model-viewer>
+        <!-- <img src="/static/img/logo.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100"> -->
       </div>
     </div>
   </div>
@@ -90,5 +94,13 @@
 
     </div>
   </section><!-- End About Us Section -->
+
+  
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
+  <!-- Loads <model-viewer> for old browsers like IE11: -->
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+  </script>
 
   <%- include('partials/footer') -%>

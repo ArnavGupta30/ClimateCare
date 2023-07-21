@@ -56,6 +56,17 @@ h6 {
   font-family: var(--font-primary);
 }
 
+.threemodel {
+  width: 30vw; height: 30vw;
+}
+
+@media only screen and (max-width: 1000px) {
+  .threemodel {
+    width: 100%;
+    height: 50vw;
+  }
+}
+
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
