@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "git-tag",
+    "all-contributors",
+    "first-time-contributor",
+    "released"
+  ],
+  "owner": "cashlycash",
+  "repo": "ClimateCare",
+  "name": "cashlycash",
+  "email": "arnavgupta-11408@bvniketan.onmicrosoft.com",
+}
